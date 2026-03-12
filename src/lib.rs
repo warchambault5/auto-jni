@@ -1,5 +1,5 @@
 pub mod errors;
-mod call;
+pub mod call;
 
 #[cfg(feature = "build")]
 mod codegen;

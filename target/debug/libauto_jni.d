@@ -1,0 +1,1 @@
+/home/will/RustroverProjects/auto-jni/target/debug/libauto_jni.rlib: /home/will/RustroverProjects/auto-jni/src/call.rs /home/will/RustroverProjects/auto-jni/src/errors.rs /home/will/RustroverProjects/auto-jni/src/lib.rs
