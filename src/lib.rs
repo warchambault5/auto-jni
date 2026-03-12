@@ -2,7 +2,7 @@ pub mod errors;
 pub mod call;
 
 #[cfg(feature = "build")]
-mod codegen;
+pub mod codegen;
 
 #[cfg(feature = "build")]
 pub use codegen::generate_bindings_file;
