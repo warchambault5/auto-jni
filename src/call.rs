@@ -1,3 +1,5 @@
+use std::path::Path;
+
 /// Call a static Java method, caching the method ID in a `OnceCell`.
 #[macro_export]
 macro_rules! call_static {
@@ -48,3 +50,32 @@ macro_rules! create {
         env.new_global_ref(obj).unwrap()
     }};
 }
+
+// /// Generate a Rust source file with JNI bindings for the given Java classes.
+// ///
+// /// Call this from your `build.rs`:
+// /// ```no_run
+// /// auto_jni::generate_bindings_file(
+// ///     vec!["com.example.MyClass"],
+// ///     Some("path/to/classes".into()),
+// ///     &std::path::Path::new(&std::env::var("OUT_DIR").unwrap()).join("bindings.rs"),
+// ///     Some(vec!["-Djava.class.path=path/to/classes".into()]),
+// /// ).unwrap();
+// /// ```
+// pub fn generate_bindings_file(
+//     classes: Vec<&str>,
+//     class_path: Option<String>,
+//     output_path: &Path,
+//     jvm_options: Option<Vec<String>>,
+// ) -> std::io::Result<()> {
+//     let mut file = File::create(output_path)?;
+
+//     write_header(&mut file, jvm_options)?;
+
+//     for class in classes {
+//         let bindings = parse_javap_output(class, class_path.clone());
+//         write_class(&mut file, class, bindings)?;
+//     }
+
+//     Ok(())
+// }
